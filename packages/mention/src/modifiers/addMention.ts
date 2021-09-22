@@ -28,28 +28,13 @@ export default function addMention(
     focusOffset: end,
   });
 
-  let mentionReplacedContent = Modifier.replaceText(
+  const mentionReplacedContent = Modifier.replaceText(
     editorState.getCurrentContent(),
     mentionTextSelection,
     `${mentionPrefix}${mention.name}`,
     undefined, // no inline style needed
     entityKey
   );
-
-  // If the mention is inserted at the end, a space is appended right after for
-  // a smooth writing experience.
-  const blockKey = mentionTextSelection.getAnchorKey();
-  const blockSize = editorState
-    .getCurrentContent()
-    .getBlockForKey(blockKey)
-    .getLength();
-  if (blockSize === end) {
-    mentionReplacedContent = Modifier.insertText(
-      mentionReplacedContent,
-      mentionReplacedContent.getSelectionAfter(),
-      ' '
-    );
-  }
 
   const newEditorState = EditorState.push(
     editorState,
