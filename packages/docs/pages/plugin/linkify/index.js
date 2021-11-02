@@ -125,6 +125,14 @@ export default class App extends Component {
               className
             </span>
           </div>
+          <div className={styles.param}>
+            <span className={styles.paramName}>customExtractLinks</span>
+            <span>
+              If specified, the customExtractLinks function will be function
+              will be used to extract links. It receives the text and must
+              return a list of index, lastIndex and url or null.
+            </span>
+          </div>
           <Heading level={3}>Additional Exports</Heading>
           <div>
             In addition to the plugin the module exports{' '}
