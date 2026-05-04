@@ -48,7 +48,7 @@
     "emojibase": "^6.0.2",
     "emojibase-data": "^7.0.0",
     "immutable": "~3.7.4",
-    "lodash": "^4.17.21",
+    "lodash": "^4.18.1",
     "lodash-es": "^4.17.21",
     "prop-types": "^15.5.8",
     "react-custom-scrollbars-2": "^4.4.0",
